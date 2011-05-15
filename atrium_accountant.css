@@ -1,0 +1,16 @@
+/**
+ * Large Tab icon.
+ * icon.png = 40X40px
+ */
+
+#features-menu li a.icon-accounts span.icon {
+  background:url(icon.png) no-repeat;
+}
+
+/**
+ * Small icon for content creation.
+ * icon.png = 20X20px
+ */
+span.spaces-feature.feature-accounts {
+  background:url(icon-small.png) no-repeat;
+}

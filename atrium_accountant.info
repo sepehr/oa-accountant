@@ -29,3 +29,5 @@ name = "Atrium Accountant"
 package = "Features"
 project = "atrium_accountant"
 version = "6.x-1.0-alpha11"
+
+spaces[types] = "og"

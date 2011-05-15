@@ -258,14 +258,13 @@ function atrium_accountant_content_default_fields() {
       'url_cutoff' => '80',
     ),
     'url' => 0,
-    'title' => 'none',
-    'title_value' => '',
+    'title' => 'value',
+    'title_value' => 'Internet bank',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
       'default_value' => array(
         '0' => array(
-          'title' => '',
           'url' => '',
         ),
       ),

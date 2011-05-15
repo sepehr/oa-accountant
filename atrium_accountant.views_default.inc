@@ -79,9 +79,9 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Accounting');
+  $handler->override_option('title', 'Accounts');
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'accounts');
+  $handler->override_option('path', 'accounting');
   $handler->override_option('menu', array(
     'type' => 'normal',
     'title' => 'Accounts',
@@ -97,7 +97,7 @@ function atrium_accountant_views_default_views() {
     'name' => 'navigation',
   ));
   $translatables['accounts'] = array(
-    t('Accounting'),
+    t('Accounts'),
     t('Defaults'),
     t('Page'),
   );

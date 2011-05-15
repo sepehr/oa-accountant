@@ -4,7 +4,7 @@
  */
 
 #features-menu li a.icon-accounting span.icon {
-  background:url(icon.png) no-repeat;
+  background: url(icon.png) no-repeat;
 }
 
 /**
@@ -12,5 +12,5 @@
  * icon.png = 20X20px
  */
 span.spaces-feature.feature-atrium_accountant {
-  background:url(icon-small.png) no-repeat;
+  background: url(icon-small.png) no-repeat;
 }

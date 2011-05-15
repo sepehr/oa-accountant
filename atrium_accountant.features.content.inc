@@ -763,9 +763,9 @@ Expense',
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Transaction type',
+      'label' => 'Type',
       'weight' => '-4',
-      'description' => 'Please choose the type of the transaction.',
+      'description' => 'Please choose the type of the transaction. <em>Expense</em> type will decrease and the <em>Income</em> will increase the referenced account.',
       'type' => 'optionwidgets_select',
       'module' => 'optionwidgets',
     ),
@@ -783,7 +783,7 @@ Expense',
   t('Payee');
   t('Payer');
   t('Project');
-  t('Transaction type');
+  t('Type');
 
   return $fields;
 }

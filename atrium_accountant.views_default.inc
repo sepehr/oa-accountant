@@ -70,6 +70,20 @@ function atrium_accountant_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
+    'current' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'current',
+      'table' => 'spaces',
+      'field' => 'current',
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'spaces_feature',
@@ -79,7 +93,7 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Accounts');
+  $handler->override_option('title', 'حساب‌ها');
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->override_option('path', 'accounting');
   $handler->override_option('menu', array(

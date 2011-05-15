@@ -6,23 +6,28 @@
 function atrium_accountant_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: features:accounts
-  $menu_links['features:accounts'] = array(
-    'menu_name' => 'features',
-    'link_path' => 'accounts',
-    'router_path' => 'accounts',
-    'link_title' => 'Accounts',
-    'options' => array(),
+  // Exported menu link: navigation:node/add/transaction
+  $menu_links['navigation:node/add/transaction'] = array(
+    'menu_name' => 'navigation',
+    'link_path' => 'node/add/transaction',
+    'router_path' => 'node/add/transaction',
+    'link_title' => 'Transaction',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'An expense or income transaction in the simple accounting system.',
+      ),
+    ),
     'module' => 'system',
     'hidden' => '0',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '0',
+    'parent_path' => 'node/add',
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Accounts');
+  t('Transaction');
 
 
   return $menu_links;

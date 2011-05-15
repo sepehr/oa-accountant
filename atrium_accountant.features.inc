@@ -26,6 +26,17 @@ function atrium_accountant_node_info() {
       'min_word_count' => '0',
       'help' => '',
     ),
+    'transaction' => array(
+      'name' => t('Transaction'),
+      'module' => 'features',
+      'description' => t('An expense or income transaction in the simple accounting system.'),
+      'has_title' => '1',
+      'title_label' => t('Transaction amount'),
+      'has_body' => '1',
+      'body_label' => t('Notes'),
+      'min_word_count' => '0',
+      'help' => '',
+    ),
   );
   return $items;
 }

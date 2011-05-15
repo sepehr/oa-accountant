@@ -313,7 +313,7 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Accounts');
+  $handler->override_option('title', 'حساب‌ها');
   $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
     'grouping' => '',

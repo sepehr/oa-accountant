@@ -74,15 +74,16 @@ function atrium_accountant_strongarm() {
   $strongarm->name = 'content_extra_weights_account';
   $strongarm->value = array(
     'title' => '-5',
-    'revision_information' => '6',
-    'author' => '5',
-    'options' => '7',
-    'comment_settings' => '10',
-    'menu' => '2',
-    'book' => '4',
-    'path' => '9',
-    'attachments' => '8',
-    'og_nodeapi' => '3',
+    'body_field' => '2',
+    'revision_information' => '7',
+    'author' => '6',
+    'options' => '8',
+    'comment_settings' => '11',
+    'menu' => '3',
+    'book' => '5',
+    'path' => '10',
+    'attachments' => '9',
+    'og_nodeapi' => '4',
   );
 
   $export['content_extra_weights_account'] = $strongarm;

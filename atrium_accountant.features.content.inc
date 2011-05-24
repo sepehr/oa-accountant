@@ -549,7 +549,7 @@ Credit card',
       ),
       'default_value_php' => NULL,
       'label' => 'Related account',
-      'weight' => 0,
+      'weight' => '1',
       'description' => 'The charged account via this transaction (expense/income). ',
       'type' => 'nodereference_select',
       'module' => 'nodereference',
@@ -622,6 +622,82 @@ Credit card',
     ),
   );
 
+  // Exported field: field_transaction_date
+  $fields['transaction-field_transaction_date'] = array(
+    'field_name' => 'field_transaction_date',
+    'type_name' => 'transaction',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'date',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'date',
+    'active' => '1',
+    'granularity' => array(
+      'year' => 'year',
+      'month' => 'month',
+      'day' => 'day',
+      'hour' => 'hour',
+      'minute' => 'minute',
+    ),
+    'timezone_db' => 'UTC',
+    'tz_handling' => 'site',
+    'todate' => '',
+    'repeat' => 0,
+    'repeat_collapsed' => '',
+    'default_format' => 'medium',
+    'widget' => array(
+      'default_value' => 'now',
+      'default_value_code' => '',
+      'default_value2' => 'same',
+      'default_value_code2' => '',
+      'input_format' => 'm/d/Y',
+      'input_format_custom' => '',
+      'increment' => '1',
+      'text_parts' => array(),
+      'year_range' => '-3:+1',
+      'label_position' => 'above',
+      'label' => 'Date',
+      'weight' => 0,
+      'description' => 'Specify the date in which the transaction has been done.',
+      'type' => 'date_popup',
+      'module' => 'date',
+    ),
+  );
+
   // Exported field: field_transaction_notes
   $fields['transaction-field_transaction_notes'] = array(
     'field_name' => 'field_transaction_notes',
@@ -681,7 +757,7 @@ Credit card',
       ),
       'default_value_php' => NULL,
       'label' => 'Notes',
-      'weight' => '2',
+      'weight' => '3',
       'description' => '',
       'type' => 'text_textarea',
       'module' => 'text',
@@ -893,7 +969,7 @@ Credit card',
       ),
       'default_value_php' => NULL,
       'label' => 'Related project',
-      'weight' => '1',
+      'weight' => '2',
       'description' => 'If the transaction is related to any of Casetracker projects across groups, you might want to choose that project.',
       'type' => 'nodereference_select',
       'module' => 'nodereference',
@@ -972,6 +1048,7 @@ Expense',
   t('Account type');
   t('Amount');
   t('Card number');
+  t('Date');
   t('Internet bank URL');
   t('Notes');
   t('Payee');

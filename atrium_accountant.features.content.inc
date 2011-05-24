@@ -482,11 +482,143 @@ Credit card',
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Account',
-      'weight' => '-1',
+      'label' => 'Related account',
+      'weight' => 0,
       'description' => 'The charged account via this transaction (expense/income). ',
       'type' => 'nodereference_select',
       'module' => 'nodereference',
+    ),
+  );
+
+  // Exported field: field_transaction_amount
+  $fields['transaction-field_transaction_amount'] = array(
+    'field_name' => 'field_transaction_amount',
+    'type_name' => 'transaction',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => 5,
+      'size' => '60',
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_transaction_amount][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Amount',
+      'weight' => '-4',
+      'description' => 'The amount of the transaction.',
+      'type' => 'text_textfield',
+      'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_transaction_notes
+  $fields['transaction-field_transaction_notes'] = array(
+    'field_name' => 'field_transaction_notes',
+    'type_name' => 'transaction',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => '5',
+      'size' => 60,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_transaction_notes][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Notes',
+      'weight' => '2',
+      'description' => '',
+      'type' => 'text_textarea',
+      'module' => 'text',
     ),
   );
 
@@ -549,7 +681,7 @@ Credit card',
       ),
       'default_value_php' => NULL,
       'label' => 'Payee',
-      'weight' => '-2',
+      'weight' => '-1',
       'description' => 'Person or company that the money is paid to.',
       'type' => 'text_textfield',
       'module' => 'text',
@@ -595,35 +727,30 @@ Credit card',
       ),
     ),
     'widget_active' => '1',
-    'type' => 'userreference',
-    'required' => '0',
+    'type' => 'text',
+    'required' => '1',
     'multiple' => '0',
-    'module' => 'userreference',
+    'module' => 'text',
     'active' => '1',
-    'referenceable_roles' => array(
-      '2' => 2,
-      '3' => 0,
-      '5' => 0,
-      '4' => 0,
-    ),
-    'referenceable_status' => '1',
-    'advanced_view' => '--',
-    'advanced_view_args' => '',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
     'widget' => array(
-      'autocomplete_match' => 'contains',
-      'size' => 60,
-      'reverse_link' => 0,
+      'rows' => 5,
+      'size' => '60',
       'default_value' => array(
         '0' => array(
-          'uid' => '',
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_transaction_payer][0][value',
         ),
       ),
       'default_value_php' => NULL,
       'label' => 'Payer',
-      'weight' => '-3',
-      'description' => 'The person who paid the money.',
-      'type' => 'userreference_select',
-      'module' => 'userreference',
+      'weight' => '-2',
+      'description' => 'The person or company who paid the money.',
+      'type' => 'text_textfield',
+      'module' => 'text',
     ),
   );
 
@@ -699,8 +826,8 @@ Credit card',
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Project',
-      'weight' => 0,
+      'label' => 'Related project',
+      'weight' => '1',
       'description' => 'If the transaction is related to any of Casetracker projects across groups, you might want to choose that project.',
       'type' => 'nodereference_select',
       'module' => 'nodereference',
@@ -764,7 +891,7 @@ Expense',
       ),
       'default_value_php' => NULL,
       'label' => 'Type',
-      'weight' => '-4',
+      'weight' => '-3',
       'description' => 'Please choose the type of the transaction. <em>Expense</em> type will decrease and the <em>Income</em> will increase the referenced account.',
       'type' => 'optionwidgets_select',
       'module' => 'optionwidgets',
@@ -773,16 +900,18 @@ Expense',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Account');
   t('Account balance');
   t('Account holder');
   t('Account number');
   t('Account type');
+  t('Amount');
   t('Card number');
   t('Internet bank URL');
+  t('Notes');
   t('Payee');
   t('Payer');
-  t('Project');
+  t('Related account');
+  t('Related project');
   t('Type');
 
   return $fields;

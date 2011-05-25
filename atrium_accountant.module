@@ -8,3 +8,15 @@ include_once 'atrium_accountant.features.inc';
 function atrium_accountant_init() {
   drupal_add_css(drupal_get_path('module', 'atrium_accountant') . '/atrium_accountant.css');
 }
+
+/**
+ * Implements of hook_help().
+ */
+function atrium_accountant_help($path) {
+  // Sitewide help.
+  if ($path == 'admin/help#atrium_accountant') {
+    return  '<h3>'. t('Atrium Accountant') . '</h3>' .
+            '<p>' . t('Atrium Accountant is a simple accounting feature for OpenAtrium which lets you take care of your accounts and income/expense transactions.') . '</p>' .
+            '<p>' . t('To add accounts/transactions navigate to the Accountant feature and click the __Add account__ or __Add transacion__ button.') .'</p>';
+  }
+}

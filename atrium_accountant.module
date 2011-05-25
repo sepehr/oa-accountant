@@ -26,10 +26,20 @@ function atrium_accountant_help($path) {
       return  '<h3>' . t('Financial Account') .'</h3>' .
               '<p>'  . t('Create an account in this group. This account will be available on later transacion creations.') .'</p>';
     }
+    // On account listng page.
+    elseif ($path == 'accounting') {
+      return  '<h3>'. t('Accounts') .'</h3>' .
+              'Here is the list of all available accounts. Use the filter block to refine accounts results.';
+    }
     // On transaction creation form.
     elseif ($path == 'node/add/transaction') {
       return  '<h3>'. t('Transaction') .'</h3>' .
               '<p>'.  t('Create a transaction in this group. This transaction will change the balance of the related account based on its type.') .'</p>';
+    }
+    // On transaction listng page.
+    elseif ($path == 'accounting/transactions') {
+      return  '<h3>'. t('Transactions') .'</h3>' .
+              'Here is the list of all available transactions. Use the filter block to refine transactions results.';
     }
   }
 }

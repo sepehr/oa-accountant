@@ -202,6 +202,309 @@ function atrium_accountant_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'nodeformscols_field_placements_account_default';
+  $strongarm->value = array(
+    'title' => array(
+      'region' => 'main',
+      'weight' => '-5',
+      'has_required' => TRUE,
+      'title' => 'Account name',
+    ),
+    'menu' => array(
+      'region' => 'right',
+      'weight' => '5',
+      'has_required' => FALSE,
+      'title' => 'تنظیمات منو',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'revision_information' => array(
+      'region' => 'right',
+      'weight' => '7',
+      'has_required' => FALSE,
+      'title' => 'اطلاعات نسخه',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'comment_settings' => array(
+      'region' => 'right',
+      'weight' => '10',
+      'has_required' => FALSE,
+      'title' => 'تنظیمات نظرات',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'path' => array(
+      'region' => 'right',
+      'weight' => '9',
+      'has_required' => FALSE,
+      'title' => 'تنظیمات مسیر',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'options' => array(
+      'region' => 'right',
+      'weight' => '8',
+      'has_required' => FALSE,
+      'title' => 'تنظیمات انتشار',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'author' => array(
+      'region' => 'right',
+      'weight' => '6',
+      'has_required' => FALSE,
+      'title' => 'اطلاعات نویسنده',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'buttons' => array(
+      'region' => 'main',
+      'weight' => '100',
+      'has_required' => FALSE,
+      'title' => NULL,
+      'hidden' => 0,
+    ),
+    'notifications' => array(
+      'region' => 'main',
+      'weight' => '0.014',
+      'has_required' => FALSE,
+      'title' => 'باخبرسازی',
+      'collapsed' => 0,
+      'hidden' => 0,
+    ),
+    'book' => array(
+      'region' => 'main',
+      'weight' => '10',
+      'has_required' => FALSE,
+      'title' => 'رئوس مطالب کتاب',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'attachments' => array(
+      'region' => 'main',
+      'weight' => '30',
+      'has_required' => FALSE,
+      'title' => 'فایل‌های پیوستی',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'field_account_type' => array(
+      'region' => 'main',
+      'weight' => '-4',
+      'has_required' => TRUE,
+      'title' => 'نوع حساب',
+    ),
+    'field_account_number' => array(
+      'region' => 'right',
+      'weight' => '0',
+      'has_required' => FALSE,
+      'title' => 'شماره حساب',
+      'hidden' => 0,
+    ),
+    'field_account_card_number' => array(
+      'region' => 'right',
+      'weight' => '1',
+      'has_required' => FALSE,
+      'title' => 'شماره کارت',
+      'hidden' => 0,
+    ),
+    'field_account_holder' => array(
+      'region' => 'main',
+      'weight' => '-1',
+      'has_required' => FALSE,
+      'title' => 'دارنده حساب',
+      'hidden' => 0,
+    ),
+    'field_account_balance' => array(
+      'region' => 'main',
+      'weight' => '0',
+      'has_required' => FALSE,
+      'title' => 'موجودی حساب',
+      'hidden' => 0,
+    ),
+    'og_nodeapi' => array(
+      'region' => 'main',
+      'weight' => '2',
+      'has_required' => FALSE,
+      'title' => 'گروه ها',
+      'collapsed' => 0,
+      'hidden' => 0,
+    ),
+    'field_account_netbank' => array(
+      'region' => 'right',
+      'weight' => '2',
+      'has_required' => FALSE,
+      'title' => 'آدرس اینترنت بانک',
+      'hidden' => 0,
+    ),
+    'body_field' => array(
+      'region' => 'right',
+      'weight' => '4',
+      'has_required' => FALSE,
+      'title' => NULL,
+      'hidden' => 1,
+    ),
+    'field_account_notes' => array(
+      'region' => 'right',
+      'weight' => '3',
+      'has_required' => FALSE,
+      'title' => 'یادداشت',
+      'hidden' => 0,
+    ),
+  );
+
+  $export['nodeformscols_field_placements_account_default'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nodeformscols_field_placements_transaction_default';
+  $strongarm->value = array(
+    'title' => array(
+      'region' => 'main',
+      'weight' => '0',
+      'has_required' => TRUE,
+      'title' => 'Transaction amount',
+    ),
+    'menu' => array(
+      'region' => 'right',
+      'weight' => '4',
+      'has_required' => FALSE,
+      'title' => 'Menu settings',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'revision_information' => array(
+      'region' => 'right',
+      'weight' => '6',
+      'has_required' => FALSE,
+      'title' => 'Revision information',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'comment_settings' => array(
+      'region' => 'right',
+      'weight' => '9',
+      'has_required' => FALSE,
+      'title' => 'Comment settings',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'path' => array(
+      'region' => 'right',
+      'weight' => '8',
+      'has_required' => FALSE,
+      'title' => 'URL path settings',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'options' => array(
+      'region' => 'right',
+      'weight' => '7',
+      'has_required' => FALSE,
+      'title' => 'Publishing options',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'author' => array(
+      'region' => 'right',
+      'weight' => '5',
+      'has_required' => FALSE,
+      'title' => 'Authoring information',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'buttons' => array(
+      'region' => 'main',
+      'weight' => '8',
+      'has_required' => FALSE,
+      'title' => NULL,
+      'hidden' => 0,
+    ),
+    'notifications' => array(
+      'region' => 'main',
+      'weight' => '4',
+      'has_required' => FALSE,
+      'title' => 'Notifications',
+      'collapsed' => 0,
+      'hidden' => 0,
+    ),
+    'book' => array(
+      'region' => 'main',
+      'weight' => '6',
+      'has_required' => FALSE,
+      'title' => 'Book outline',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'attachments' => array(
+      'region' => 'main',
+      'weight' => '7',
+      'has_required' => FALSE,
+      'title' => 'File attachments',
+      'collapsed' => 1,
+      'hidden' => 1,
+    ),
+    'field_transaction_payee' => array(
+      'region' => 'main',
+      'weight' => '3',
+      'has_required' => FALSE,
+      'title' => 'Payee',
+      'hidden' => 0,
+    ),
+    'field_transaction_payer' => array(
+      'region' => 'main',
+      'weight' => '2',
+      'has_required' => TRUE,
+      'title' => 'Payer',
+      'hidden' => 0,
+    ),
+    'field_transaction_account' => array(
+      'region' => 'right',
+      'weight' => '1',
+      'has_required' => TRUE,
+      'title' => 'Related account',
+    ),
+    'field_transaction_project' => array(
+      'region' => 'right',
+      'weight' => '2',
+      'has_required' => FALSE,
+      'title' => 'Related project',
+      'hidden' => 0,
+    ),
+    'og_nodeapi' => array(
+      'region' => 'main',
+      'weight' => '5',
+      'has_required' => FALSE,
+      'title' => 'Groups',
+      'collapsed' => 0,
+      'hidden' => 1,
+    ),
+    'field_transaction_notes' => array(
+      'region' => 'right',
+      'weight' => '3',
+      'has_required' => FALSE,
+      'title' => 'Notes',
+      'hidden' => 0,
+    ),
+    'field_transaction_amount' => array(
+      'region' => 'main',
+      'weight' => '1',
+      'has_required' => TRUE,
+      'title' => 'Amount',
+    ),
+    'field_transaction_date' => array(
+      'region' => 'right',
+      'weight' => '0',
+      'has_required' => TRUE,
+      'title' => 'Date',
+    ),
+  );
+
+  $export['nodeformscols_field_placements_transaction_default'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'upload_account';
   $strongarm->value = '1';
 

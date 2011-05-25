@@ -6,7 +6,7 @@ include_once 'atrium_accountant.features.inc';
  * Implements hook_init().
  */
 function atrium_accountant_init() {
-  drupal_add_css(drupal_get_path('module', 'atrium_accountant') . '/atrium_accountant.css');
+  drupal_add_css(drupal_get_path('module', 'atrium_accountant') . '/css/atrium_accountant.css');
 }
 
 /**

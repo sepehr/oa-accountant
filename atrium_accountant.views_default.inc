@@ -480,6 +480,7 @@ function atrium_accountant_views_default_views() {
     'default' => '-1',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->override_option('exposed_block', TRUE);
   $handler->override_option('path', 'accounting/accounts');
   $handler->override_option('menu', array(
     'type' => 'default tab',
@@ -1136,6 +1137,7 @@ function atrium_accountant_views_default_views() {
     'default' => '-1',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->override_option('exposed_block', TRUE);
   $handler->override_option('path', 'accounting/transactions');
   $handler->override_option('menu', array(
     'type' => 'tab',

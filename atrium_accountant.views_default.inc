@@ -505,7 +505,7 @@ function atrium_accountant_views_default_views() {
     'default' => 'field_account_balance_value',
     'detailed_values' => '0',
   ));
-  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler = $view->new_display('page', 'All accounts', 'page_1');
   $handler->override_option('exposed_block', TRUE);
   $handler->override_option('path', 'accounting/accounts');
   $handler->override_option('menu', array(
@@ -524,9 +524,9 @@ function atrium_accountant_views_default_views() {
   ));
   $translatables['accounts'] = array(
     t('Accounts'),
+    t('All accounts'),
     t('Could not find any account.'),
     t('Defaults'),
-    t('Page'),
   );
 
   $views[$view->name] = $view;
@@ -543,6 +543,50 @@ function atrium_accountant_views_default_views() {
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
+    'field_transaction_date_value' => array(
+      'label' => 'Date',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'widget',
+      'format' => 'short',
+      'multiple' => array(
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_to' => '',
+        'group' => '',
+      ),
+      'repeat' => array(
+        'show_repeat_rule' => '',
+      ),
+      'fromto' => array(
+        'fromto' => 'both',
+      ),
+      'exclude' => 0,
+      'id' => 'field_transaction_date_value',
+      'table' => 'node_data_field_transaction_date',
+      'field' => 'field_transaction_date_value',
+      'relationship' => 'none',
+    ),
     'field_transaction_amount_value' => array(
       'label' => 'Amount',
       'alter' => array(
@@ -579,50 +623,6 @@ function atrium_accountant_views_default_views() {
       'id' => 'field_transaction_amount_value',
       'table' => 'node_data_field_transaction_amount',
       'field' => 'field_transaction_amount_value',
-      'relationship' => 'none',
-    ),
-    'field_transaction_date_value' => array(
-      'label' => 'Date',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'label_type' => 'widget',
-      'format' => 'default',
-      'multiple' => array(
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_to' => '',
-        'group' => '',
-      ),
-      'repeat' => array(
-        'show_repeat_rule' => '',
-      ),
-      'fromto' => array(
-        'fromto' => 'both',
-      ),
-      'exclude' => 0,
-      'id' => 'field_transaction_date_value',
-      'table' => 'node_data_field_transaction_date',
-      'field' => 'field_transaction_date_value',
       'relationship' => 'none',
     ),
     'field_transaction_payee_value' => array(
@@ -1122,7 +1122,6 @@ function atrium_accountant_views_default_views() {
     'sticky' => 1,
     'order' => 'desc',
     'columns' => array(
-      'field_transaction_type_value' => 'field_transaction_type_value',
       'field_transaction_amount_value' => 'field_transaction_amount_value',
       'field_transaction_date_value' => 'field_transaction_date_value',
       'field_transaction_payee_value' => 'field_transaction_payee_value',
@@ -1133,24 +1132,13 @@ function atrium_accountant_views_default_views() {
       'edit_node' => 'edit_node',
     ),
     'info' => array(
-      'field_transaction_type_value' => array(
-        'sortable' => 1,
-        'separator' => '',
-        'justification' => 'views_calc_justify_none',
-        'has_calc' => 0,
-        'calc' => array(),
-      ),
       'field_transaction_amount_value' => array(
         'sortable' => 1,
         'separator' => '',
         'justification' => 'views_calc_justify_none',
         'has_calc' => 1,
         'calc' => array(
-          'COUNT' => 'COUNT',
           'SUM' => 'SUM',
-          'AVG' => 'AVG',
-          'MIN' => 'MIN',
-          'MAX' => 'MAX',
         ),
       ),
       'field_transaction_date_value' => array(
@@ -1203,7 +1191,7 @@ function atrium_accountant_views_default_views() {
     'default' => 'field_transaction_date_value',
     'detailed_values' => '0',
   ));
-  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler = $view->new_display('page', 'All transactions', 'page_1');
   $handler->override_option('exposed_block', TRUE);
   $handler->override_option('path', 'accounting/transactions');
   $handler->override_option('menu', array(
@@ -1221,9 +1209,9 @@ function atrium_accountant_views_default_views() {
     'name' => 'navigation',
   ));
   $translatables['transactions'] = array(
+    t('All transactions'),
     t('Could not find any transaction.'),
     t('Defaults'),
-    t('Page'),
     t('Transactions'),
   );
 

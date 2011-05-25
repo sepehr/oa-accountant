@@ -19,9 +19,9 @@ function atrium_accountant_ctools_plugin_api() {
 function atrium_accountant_node_info() {
   $items = array(
     'account' => array(
-      'name' => t('Account'),
+      'name' => t('Financial Account'),
       'module' => 'features',
-      'description' => t('An account for the simple accountant system that can be a Bank Account or Cash Account.'),
+      'description' => t('An account for the simple accountant system that can be a Bank, Cash, Liability, etc. typed account.'),
       'has_title' => '1',
       'title_label' => t('Account name'),
       'has_body' => '0',

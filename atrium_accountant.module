@@ -20,15 +20,15 @@ function atrium_accountant_help($path) {
             '<p>' . t('To add accounts/transactions navigate to the Accountant feature and click the "Add account" or "Add transacion" button.') .'</p>';
   }
   // Contextual help.
-  if (context_isset('context', 'spaces-feature-atrium_accountant')) {
+  if (context_isset('context', 'account_listing') || context_isset('context', 'transaction_listing')) {
     // On account creation form.
     if ($path == 'node/add/account') {
-      return  '<h3>' . t('Account') .'</h3>' .
+      return  '<h3>' . t('Financial Account') .'</h3>' .
               '<p>'  . t('Create an account in this group. This account will be available on later transacion creations.') .'</p>';
     }
     // On transaction creation form.
     elseif ($path == 'node/add/transaction') {
-      return  '<h3>'. t('Transaction') .'</h3>';
+      return  '<h3>'. t('Transaction') .'</h3>' .
               '<p>'.  t('Create a transaction in this group. This transaction will change the balance of the related account based on its type.') .'</p>';
     }
   }

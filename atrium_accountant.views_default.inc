@@ -427,7 +427,7 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'حساب‌ها');
+  $handler->override_option('title', 'Accounts');
   $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -1081,7 +1081,7 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'تراکنش‌ها');
+  $handler->override_option('title', 'Transactions');
   $handler->override_option('css_class', 'atrium-transactions');
   $handler->override_option('items_per_page', 30);
   $handler->override_option('use_pager', '1');

@@ -1,16 +1,30 @@
 /**
+ * @file
+ * Atrium Accountant CSS stylesheet.
+ */
+
+/**
  * Large Tab icon.
  * icon.png = 40X40px
  */
-
 #features-menu li a.icon-accounting span.icon {
   background: url(icon.png) no-repeat;
 }
 
 /**
  * Small icon for content creation.
- * icon.png = 20X20px
+ * icon-small.png = 20X20px
  */
 span.spaces-feature.feature-atrium_accountant {
   background: url(icon-small.png) no-repeat;
+}
+
+/**
+ * Font styles for view tables.
+ */
+.view-accounts .views-field,
+.view-accounts .views-field a,
+.view-transactions .views-field,
+.view-transactions .views-field a {
+  font-size: 11px !important;
 }

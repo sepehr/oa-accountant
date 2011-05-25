@@ -431,9 +431,9 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'حساب‌ها');
+  $handler->override_option('title', 'Accounts');
   $handler->override_option('css_class', 'atrium-accounts');
-  $handler->override_option('empty', 'هیچ حسابی پیدا نشد.');
+  $handler->override_option('empty', 'Could not find any account.');
   $handler->override_option('empty_format', '5');
   $handler->override_option('style_plugin', 'views_calc');
   $handler->override_option('style_options', array(
@@ -1109,7 +1109,7 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'تراکنش‌ها');
+  $handler->override_option('title', 'Transactions');
   $handler->override_option('css_class', 'atrium-transactions');
   $handler->override_option('empty', 'Could not find any transaction.');
   $handler->override_option('empty_format', '5');

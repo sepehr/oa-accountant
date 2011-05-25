@@ -115,7 +115,7 @@ function atrium_accountant_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'widget',
-      'format' => 'default',
+      'format' => 'us_2',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -343,8 +343,12 @@ function atrium_accountant_views_default_views() {
       'reduce_duplicates' => 0,
     ),
     'field_account_balance_value' => array(
-      'operator' => 'starts',
-      'value' => '',
+      'operator' => '>=',
+      'value' => array(
+        'value' => '',
+        'min' => '',
+        'max' => '',
+      ),
       'group' => '0',
       'exposed' => TRUE,
       'expose' => array(

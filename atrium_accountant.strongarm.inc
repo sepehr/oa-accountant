@@ -362,9 +362,9 @@ function atrium_accountant_strongarm() {
   $strongarm->value = array(
     'title' => array(
       'region' => 'main',
-      'weight' => '0',
+      'weight' => '1',
       'has_required' => TRUE,
-      'title' => 'Transaction amount',
+      'title' => 'Concern',
     ),
     'menu' => array(
       'region' => 'right',
@@ -489,7 +489,7 @@ function atrium_accountant_strongarm() {
     ),
     'field_transaction_amount' => array(
       'region' => 'main',
-      'weight' => '1',
+      'weight' => '0',
       'has_required' => TRUE,
       'title' => 'Amount',
     ),

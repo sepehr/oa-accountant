@@ -137,7 +137,6 @@ function atrium_accountant_strongarm() {
   $strongarm->name = 'content_extra_weights_account';
   $strongarm->value = array(
     'title' => '-5',
-    'body_field' => '3',
     'revision_information' => '8',
     'author' => '7',
     'options' => '9',

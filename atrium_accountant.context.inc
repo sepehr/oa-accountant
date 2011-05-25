@@ -12,6 +12,15 @@ function atrium_accountant_context_default_contexts() {
   $context->description = '';
   $context->tag = 'Accountant';
   $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'account' => 'account',
+        'transaction' => 'transaction',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
     'views' => array(
       'values' => array(
         'accounts' => 'accounts',
@@ -29,6 +38,7 @@ function atrium_accountant_context_default_contexts() {
         ),
       ),
     ),
+    'menu' => 'accounting',
   );
   $context->condition_mode = 0;
 
@@ -44,6 +54,15 @@ function atrium_accountant_context_default_contexts() {
   $context->description = '';
   $context->tag = 'Accountant';
   $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'account' => 'account',
+        'transaction' => 'transaction',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
     'views' => array(
       'values' => array(
         'transactions' => 'transactions',
@@ -61,6 +80,7 @@ function atrium_accountant_context_default_contexts() {
         ),
       ),
     ),
+    'menu' => 'accounting',
   );
   $context->condition_mode = 0;
 

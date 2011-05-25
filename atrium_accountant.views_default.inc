@@ -427,7 +427,10 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Accounts');
+  $handler->override_option('title', 'حساب‌ها');
+  $handler->override_option('css_class', 'atrium-accounts');
+  $handler->override_option('empty', 'هیچ حسابی پیدا نشد.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -498,6 +501,7 @@ function atrium_accountant_views_default_views() {
   ));
   $translatables['accounts'] = array(
     t('Accounts'),
+    t('Could not find any account.'),
     t('Defaults'),
     t('Page'),
   );
@@ -912,6 +916,72 @@ function atrium_accountant_views_default_views() {
       'field' => 'current',
       'relationship' => 'none',
     ),
+    'field_transaction_date_value' => array(
+      'operator' => '>=',
+      'value' => array(
+        'min' => '2011-01-01 00:00:00',
+        'max' => '2011-01-01 00:00:00',
+        'value' => NULL,
+        'default_date' => '',
+        'default_to_date' => '',
+      ),
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'operator' => 'field_transaction_date_value_op',
+        'label' => 'Date from',
+        'use_operator' => 0,
+        'identifier' => 'field_transaction_date_from_value',
+        'optional' => 1,
+        'remember' => 0,
+      ),
+      'date_fields' => array(
+        'node_data_field_transaction_date.field_transaction_date_value' => 'node_data_field_transaction_date.field_transaction_date_value',
+      ),
+      'date_method' => 'OR',
+      'granularity' => 'day',
+      'form_type' => 'date_select',
+      'default_date' => '',
+      'default_to_date' => '',
+      'year_range' => '-3:+1',
+      'id' => 'field_transaction_date_value',
+      'table' => 'node_data_field_transaction_date',
+      'field' => 'field_transaction_date_value',
+      'relationship' => 'none',
+    ),
+    'field_transaction_date_value_1' => array(
+      'operator' => '<=',
+      'value' => array(
+        'value' => NULL,
+        'min' => '2011-01-01 00:00:00',
+        'max' => '2011-01-01 00:00:00',
+        'default_date' => '',
+        'default_to_date' => '',
+      ),
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'use_operator' => 0,
+        'operator' => 'field_transaction_date_value_1_op',
+        'identifier' => 'field_transaction_date_to_value',
+        'label' => 'Date to',
+        'optional' => 1,
+        'remember' => 0,
+      ),
+      'date_fields' => array(
+        'node_data_field_transaction_date.field_transaction_date_value' => 'node_data_field_transaction_date.field_transaction_date_value',
+      ),
+      'date_method' => 'AND',
+      'granularity' => 'day',
+      'form_type' => 'date_select',
+      'default_date' => '',
+      'default_to_date' => '',
+      'year_range' => '-3:+1',
+      'id' => 'field_transaction_date_value_1',
+      'table' => 'node_data_field_transaction_date',
+      'field' => 'field_transaction_date_value',
+      'relationship' => 'none',
+    ),
     'field_transaction_amount_value' => array(
       'operator' => 'starts',
       'value' => '',
@@ -929,37 +999,6 @@ function atrium_accountant_views_default_views() {
       'id' => 'field_transaction_amount_value',
       'table' => 'node_data_field_transaction_amount',
       'field' => 'field_transaction_amount_value',
-      'relationship' => 'none',
-    ),
-    'field_transaction_date_value' => array(
-      'operator' => '>=',
-      'value' => array(
-        'value' => '2011-01-01 00:00:00',
-        'min' => '2011-01-01 00:00:00',
-        'max' => '2011-01-01 00:00:00',
-        'default_date' => '',
-        'default_to_date' => '',
-      ),
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'use_operator' => 0,
-        'operator' => 'field_transaction_date_value_op',
-        'identifier' => 'field_transaction_date_value',
-        'label' => 'Date',
-        'optional' => 1,
-        'remember' => 0,
-      ),
-      'date_fields' => array(),
-      'date_method' => 'OR',
-      'granularity' => 'day',
-      'form_type' => 'date_select',
-      'default_date' => '',
-      'default_to_date' => '',
-      'year_range' => '-3:+3',
-      'id' => 'field_transaction_date_value',
-      'table' => 'node_data_field_transaction_date',
-      'field' => 'field_transaction_date_value',
       'relationship' => 'none',
     ),
     'field_transaction_payee_value' => array(
@@ -1081,8 +1120,10 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Transactions');
+  $handler->override_option('title', 'تراکنش‌ها');
   $handler->override_option('css_class', 'atrium-transactions');
+  $handler->override_option('empty', 'Could not find any transaction.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 30);
   $handler->override_option('use_pager', '1');
   $handler->override_option('style_plugin', 'table');
@@ -1154,6 +1195,7 @@ function atrium_accountant_views_default_views() {
     'name' => 'navigation',
   ));
   $translatables['transactions'] = array(
+    t('Could not find any transaction.'),
     t('Defaults'),
     t('Page'),
     t('Transactions'),

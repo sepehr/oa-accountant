@@ -539,44 +539,6 @@ function atrium_accountant_views_default_views() {
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
-    'field_transaction_type_value' => array(
-      'label' => 'Type',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 0,
-        'ellipsis' => 0,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'label_type' => 'widget',
-      'format' => 'default',
-      'multiple' => array(
-        'group' => TRUE,
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_reversed' => FALSE,
-      ),
-      'exclude' => 0,
-      'id' => 'field_transaction_type_value',
-      'table' => 'node_data_field_transaction_type',
-      'field' => 'field_transaction_type_value',
-      'relationship' => 'none',
-    ),
     'field_transaction_amount_value' => array(
       'label' => 'Amount',
       'alter' => array(
@@ -602,7 +564,7 @@ function atrium_accountant_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'widget',
-      'format' => 'default',
+      'format' => 'us_2',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -1002,8 +964,12 @@ function atrium_accountant_views_default_views() {
       'relationship' => 'none',
     ),
     'field_transaction_amount_value' => array(
-      'operator' => 'starts',
-      'value' => '',
+      'operator' => '>=',
+      'value' => array(
+        'value' => '',
+        'min' => '',
+        'max' => '',
+      ),
       'group' => '0',
       'exposed' => TRUE,
       'expose' => array(

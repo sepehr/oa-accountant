@@ -5,12 +5,12 @@
 
 /* Feature large tab icon */
 #features-menu li a.icon-accounting span.icon {
-  background: url(icon.png) no-repeat;
+  background: url(../images/icon.png) no-repeat;
 }
 
 /* Feature small icon for content creation */
 span.spaces-feature.feature-atrium_accountant {
-  background: url(icon-small.png) no-repeat;
+  background: url(../images/icon-small.png) no-repeat;
 }
 
 /* Views tables */

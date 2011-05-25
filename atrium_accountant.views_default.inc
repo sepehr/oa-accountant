@@ -431,56 +431,75 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('css_class', 'atrium-accounts');
   $handler->override_option('empty', 'هیچ حسابی پیدا نشد.');
   $handler->override_option('empty_format', '5');
-  $handler->override_option('style_plugin', 'table');
+  $handler->override_option('style_plugin', 'views_calc');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'override' => 1,
-    'sticky' => 0,
-    'order' => 'asc',
+    'sticky' => 1,
+    'order' => 'desc',
     'columns' => array(
       'title' => 'title',
-      'field_account_balance_value' => 'field_account_balance_value',
-      'field_account_holder_value' => 'field_account_holder_value',
-      'field_account_number_value' => 'field_account_number_value',
       'field_account_type_value' => 'field_account_type_value',
+      'field_account_balance_value' => 'field_account_balance_value',
+      'field_account_number_value' => 'field_account_number_value',
       'field_account_card_number_value' => 'field_account_card_number_value',
       'edit_node' => 'edit_node',
-      'field_account_netbank_url' => 'edit_node',
+      'field_account_netbank_url' => 'field_account_netbank_url',
     ),
     'info' => array(
       'title' => array(
-        'sortable' => 0,
+        'sortable' => 1,
         'separator' => '',
-      ),
-      'field_account_balance_value' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'field_account_holder_value' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'field_account_number_value' => array(
-        'sortable' => 0,
-        'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
       'field_account_type_value' => array(
         'sortable' => 0,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
+      ),
+      'field_account_balance_value' => array(
+        'sortable' => 1,
+        'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 1,
+        'calc' => array(
+          'SUM' => 'SUM',
+        ),
+      ),
+      'field_account_number_value' => array(
+        'sortable' => 0,
+        'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
       'field_account_card_number_value' => array(
         'sortable' => 0,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
       'edit_node' => array(
-        'separator' => ' | ',
+        'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
       'field_account_netbank_url' => array(
         'sortable' => 0,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
     ),
-    'default' => '-1',
+    'default' => 'field_account_balance_value',
+    'detailed_values' => '0',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->override_option('exposed_block', TRUE);
@@ -1126,56 +1145,93 @@ function atrium_accountant_views_default_views() {
   $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 30);
   $handler->override_option('use_pager', '1');
-  $handler->override_option('style_plugin', 'table');
+  $handler->override_option('style_plugin', 'views_calc');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'override' => 1,
-    'sticky' => 0,
-    'order' => 'asc',
+    'sticky' => 1,
+    'order' => 'desc',
     'columns' => array(
-      'title' => 'title',
-      'field_account_balance_value' => 'field_account_balance_value',
-      'field_account_holder_value' => 'field_account_holder_value',
-      'field_account_number_value' => 'field_account_number_value',
-      'field_account_type_value' => 'field_account_type_value',
-      'field_account_card_number_value' => 'field_account_card_number_value',
+      'field_transaction_type_value' => 'field_transaction_type_value',
+      'field_transaction_amount_value' => 'field_transaction_amount_value',
+      'field_transaction_date_value' => 'field_transaction_date_value',
+      'field_transaction_payee_value' => 'field_transaction_payee_value',
+      'field_transaction_payer_value' => 'field_transaction_payer_value',
+      'field_transaction_account_nid' => 'field_transaction_account_nid',
+      'field_transaction_project_nid' => 'field_transaction_project_nid',
+      'field_transaction_notes_value' => 'field_transaction_notes_value',
       'edit_node' => 'edit_node',
-      'field_account_netbank_url' => 'edit_node',
     ),
     'info' => array(
-      'title' => array(
-        'sortable' => 0,
+      'field_transaction_type_value' => array(
+        'sortable' => 1,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
-      'field_account_balance_value' => array(
-        'sortable' => 0,
+      'field_transaction_amount_value' => array(
+        'sortable' => 1,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 1,
+        'calc' => array(
+          'COUNT' => 'COUNT',
+          'SUM' => 'SUM',
+          'AVG' => 'AVG',
+          'MIN' => 'MIN',
+          'MAX' => 'MAX',
+        ),
       ),
-      'field_account_holder_value' => array(
-        'sortable' => 0,
+      'field_transaction_date_value' => array(
+        'sortable' => 1,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
-      'field_account_number_value' => array(
-        'sortable' => 0,
+      'field_transaction_payee_value' => array(
+        'sortable' => 1,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
-      'field_account_type_value' => array(
-        'sortable' => 0,
+      'field_transaction_payer_value' => array(
+        'sortable' => 1,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
-      'field_account_card_number_value' => array(
+      'field_transaction_account_nid' => array(
+        'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
+      ),
+      'field_transaction_project_nid' => array(
+        'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
+      ),
+      'field_transaction_notes_value' => array(
         'sortable' => 0,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
       'edit_node' => array(
-        'separator' => ' | ',
-      ),
-      'field_account_netbank_url' => array(
-        'sortable' => 0,
         'separator' => '',
+        'justification' => 'views_calc_justify_none',
+        'has_calc' => 0,
+        'calc' => array(),
       ),
     ),
-    'default' => '-1',
+    'default' => 'field_transaction_date_value',
+    'detailed_values' => '0',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->override_option('exposed_block', TRUE);
